@@ -18,9 +18,7 @@ const CpuArchitecture = ({
   className,
   width = "100%",
   height = "100%",
-  text = "CPU",
   showCpuConnections = true,
-  animateText = true,
   lineMarkerSize = 18,
   animateLines = true,
   animateMarkers = true,
@@ -28,14 +26,14 @@ const CpuArchitecture = ({
 }: CpuArchitectureSvgProps) => {
   // Fixed positions for each path's label (matches paths 1–8)
   const LABEL_POSITIONS = [
-    { x: 2,   y: 17,  anchor: "start" }, // path 1 — top-left
-    { x: 178, y: 7,   anchor: "end"   }, // path 2 — top-right
-    { x: 133, y: 16,  anchor: "start" }, // path 3 — upper-right
-    { x: 172, y: 87,  anchor: "start" }, // path 4 — lower-right
-    { x: 153, y: 73,  anchor: "start" }, // path 5 — right wrap
-    { x: 97,  y: 98,  anchor: "start" }, // path 6 — bottom center
-    { x: 42,  y: 96,  anchor: "start" }, // path 7 — bottom-left
-    { x: 2,   y: 27,  anchor: "start" }, // path 8 — left side
+    { x: 2,   y: 14,  anchor: "start" }, // path 1 — top-left
+    { x: 198, y: 6,   anchor: "end"   }, // path 2 — top-right
+    { x: 129, y: 16,  anchor: "start" }, // path 3 — upper-right
+    { x: 168, y: 87,  anchor: "start" }, // path 4 — lower-right
+    { x: 122, y: 73,  anchor: "start" }, // path 5 — right wrap - Knowledge Vault
+    { x: 100,  y: 96,  anchor: "start" }, // path 6 — bottom center - Core API
+    { x: 42,  y: 89,  anchor: "start" }, // path 7 — bottom-left - Orchestration
+    { x: 2,   y: 38,  anchor: "start" }, // path 8 — left side
   ];
 
   return (

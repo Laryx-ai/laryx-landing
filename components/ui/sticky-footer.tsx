@@ -24,15 +24,15 @@ interface FooterLinkGroup {
 
 type StickyFooterProps = React.ComponentProps<'footer'>;
 
-const FOOTER_HEIGHT = 480;
+const FOOTER_HEIGHT = 460;
 
 export function StickyFooter({ className, ...props }: StickyFooterProps) {
   const [footerHeight, setFooterHeight] = React.useState(FOOTER_HEIGHT);
 
   React.useEffect(() => {
     const update = () => {
-      if (window.innerWidth < 480) setFooterHeight(640);
-      else if (window.innerWidth < 640) setFooterHeight(560);
+      if (window.innerWidth < 480) setFooterHeight(580);
+      else if (window.innerWidth < 640) setFooterHeight(460);
       else setFooterHeight(FOOTER_HEIGHT);
     };
     update();

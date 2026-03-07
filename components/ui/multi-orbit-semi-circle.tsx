@@ -56,8 +56,8 @@ function SemiCircleOrbit({
           d={`M ${centerX - radius} ${centerY} A ${radius} ${radius} 0 0 1 ${centerX + radius} ${centerY}`}
           fill="none"
           stroke="rgba(4,102,200,0.2)"
-          strokeWidth="1"
-          strokeDasharray="4 6"
+          strokeWidth="2"
+          strokeDasharray="4 10"
         />
       </svg>
 
@@ -182,7 +182,7 @@ export default function MultiOrbitSemiCircle() {
                 top: centerY - 40,
                 width: 160,
                 height: 80,
-                background: "radial-gradient(ellipse, rgba(4,102,200,0.22), transparent 70%)",
+                background: "radial-gradient(ellipse, rgba(4,102,200,0.22), transparent 90%)",
                 filter: "blur(12px)",
               }}
             />

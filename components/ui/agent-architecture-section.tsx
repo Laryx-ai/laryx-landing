@@ -48,7 +48,7 @@ export default function AgentArchitectureSection() {
         </div>
 
         {/* CPU Diagram — full width, large on big screens */}
-        <div className="w-full aspect-[2/1] min-h-[220px] rounded-2xl border border-white/10 bg-white/3 backdrop-blur-sm p-4 lg:p-8">
+        <div className="w-full aspect-2/1 min-h-55 rounded-2xl border border-white/10 bg-white/3 backdrop-blur-sm p-4 lg:p-8">
           <CpuArchitecture
             className="text-white/25 w-full h-full"
             width="100%"
