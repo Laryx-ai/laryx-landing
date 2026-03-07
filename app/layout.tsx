@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Geist_Mono, Dancing_Script } from "next/font/google";
+import { Plus_Jakarta_Sans, Geist_Mono, Dancing_Script, Aclonica } from "next/font/google";
 import "./globals.css";
 
 const jakartaSans = Plus_Jakarta_Sans({
@@ -17,6 +17,12 @@ export const dancingScript = Dancing_Script({
   variable: "--font-dancing",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+});
+
+export const aclonica = Aclonica({
+  variable: "--font-aclonica",
+  subsets: ["latin"],
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {

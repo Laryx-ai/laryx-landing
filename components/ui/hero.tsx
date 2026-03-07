@@ -37,7 +37,7 @@ export default function ShaderShowcase() {
   const containerRef = useRef<HTMLDivElement>(null)
   const iframeRef = useRef<HTMLIFrameElement>(null)
   const [menuOpen, setMenuOpen] = useState(false)
-  const [spotifyOpen, setSpotifyOpen] = useState(true)
+  const [spotifyOpen, setSpotifyOpen] = useState(false)
 
   // Set iframe src after hydration so browser treats it as user-initiated,
   // which allows autoplay=1 to fire reliably.
@@ -322,7 +322,7 @@ export default function ShaderShowcase() {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <motion.span
-              className="block font-light text-white/90 text-4xl md:text-5xl lg:text-6xl mb-2 tracking-wider"
+              className="block font-light text-white/90 text-4xl md:text-5xl lg:text-6xl mb-2 tracking-wider font-aclonica"
               style={{
                 background: "linear-gradient(135deg, #ffffff 0%, #0466C8 30%, #ffffff 70%, #0466C8 100%)",
                 WebkitBackgroundClip: "text",

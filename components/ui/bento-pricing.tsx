@@ -123,7 +123,7 @@ export function BentoPricing() {
 
         <div className="flex flex-col p-4 lg:flex-row">
           <div className="pb-4 lg:w-[30%]">
-            <span className="font-mono text-5xl font-semibold tracking-tight text-white">$49</span>
+            <span className="font-mono text-5xl font-semibold tracking-tight text-white">₹3,999</span>
             <span className="text-white/40 text-sm">/month</span>
           </div>
           <ul className="grid gap-3 text-sm text-white/60 lg:w-[70%]">
@@ -160,7 +160,7 @@ export function BentoPricing() {
       {/* Teams */}
       <PricingCard
         titleBadge="TEAMS"
-        priceLabel="$19"
+        priceLabel="₹1,499"
         cta="Get Started"
         ctaHref="mailto:hello@laryx.ai"
         features={[
@@ -175,7 +175,7 @@ export function BentoPricing() {
       {/* Enterprise */}
       <PricingCard
         titleBadge="ENTERPRISE"
-        priceLabel="$99"
+        priceLabel="₹7,999"
         cta="Contact Sales"
         ctaHref="mailto:sales@laryx.ai"
         features={[
