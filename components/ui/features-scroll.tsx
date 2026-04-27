@@ -1,12 +1,10 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
-import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 interface Feature {
   title: string;
   description: string;
-  icon: string;
   color: string;
 }
 
@@ -14,52 +12,72 @@ const FEATURES: Feature[] = [
   { 
     title: "Laryx Retrieval", 
     description: "Context-grounded answers from your document corpus",
-    icon: "/retrival.png", 
     color: "#00aaff" 
   },
   { 
     title: "Semantic Index", 
     description: "High-density vector search across structured knowledge",
-    icon: "/semantic.png", 
     color: "#FFD800" 
   },
   { 
     title: "Signal Classifier", 
     description: "Real-time query routing across seven intent signals",
-    icon: "/classifier.png", 
     color: "#FF008B" 
   },
   { 
     title: "Inference Layer", 
     description: "Pluggable model backends with unified API surface",
-    icon: "/inference.png", 
     color: "#ffffff" 
   },
   { 
     title: "Knowledge Vault", 
     description: "Versioned document store with live indexing",
-    icon: "/vault.png", 
     color: "#22c55e" 
   },
   { 
     title: "Laryx Core API", 
     description: "Stateless, decoupled service layer for any client",
-    icon: "/coreapi.png", 
     color: "#f97316" 
   },
   { 
     title: "Orchestration Engine", 
     description: "Dynamic prompt assembly and multi-step reasoning",
-    icon: "/orchestra.png", 
     color: "#0466C8" 
   },
   { 
     title: "Session Context", 
     description: "Persistent turn history for coherent multi-round dialogue",
-    icon: "/session.png", 
     color: "#f43f5e" 
   },
 ];
+
+function FeatureIcon({ color, label }: { color: string; label: string }) {
+  const initial = label.split(" ").pop()?.charAt(0) || "L";
+  return (
+    <div
+      className="relative w-64 h-64 lg:w-80 lg:h-80 rounded-2xl flex items-center justify-center"
+      style={{
+        background: `linear-gradient(135deg, ${color}20 0%, ${color}08 100%)`,
+        border: `1px solid ${color}40`,
+      }}
+    >
+      <div 
+        className="w-32 h-32 lg:w-40 lg:h-40 rounded-2xl flex items-center justify-center"
+        style={{
+          background: `linear-gradient(135deg, ${color}30 0%, ${color}15 100%)`,
+          border: `2px solid ${color}60`,
+        }}
+      >
+        <span 
+          className="text-7xl lg:text-8xl font-bold"
+          style={{ color }}
+        >
+          {initial}
+        </span>
+      </div>
+    </div>
+  );
+}
 
 function FeatureCard({
   feature,
@@ -72,7 +90,7 @@ function FeatureCard({
     <div
       className={cn(
         "absolute inset-0 flex items-center justify-center transition-all duration-500 ease-out",
-        isActive ? "opacity-100" : "opacity-0"
+        isActive ? "opacity-100" : "opacity-0 pointer-events-none"
       )}
       style={{
         transform: isActive ? "translateY(0)" : "translateY(30px)",
@@ -81,23 +99,7 @@ function FeatureCard({
     >
       <div className="w-full max-w-5xl mx-auto px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          <div
-            className="w-64 h-64 lg:w-80 lg:h-80 rounded-2xl flex items-center justify-center mx-auto lg:mx-0"
-            style={{
-              background: `linear-gradient(135deg, ${feature.color}15 0%, ${feature.color}05 100%)`,
-              border: `1px solid ${feature.color}30`,
-            }}
-          >
-            <Image
-              src={feature.icon}
-              alt={feature.title}
-              width={224}
-              height={224}
-              className="w-48 h-48 lg:w-56 lg:h-56 object-contain"
-              placeholder="blur"
-              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5XDcwWSQzRkI-/9k="
-            />
-          </div>
+          <FeatureIcon color={feature.color} label={feature.title} />
           
           <div className="text-center lg:text-left space-y-4">
             <div className="flex items-center justify-center lg:justify-start gap-3">
