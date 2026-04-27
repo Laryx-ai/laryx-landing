@@ -13,16 +13,7 @@ const NAV_LINKS = [
 
 export default function ShaderShowcase() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const iframeRef = useRef<HTMLIFrameElement>(null);
-  const [spotifyOpen, setSpotifyOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    if (iframeRef.current) {
-      iframeRef.current.src =
-        "https://open.spotify.com/embed/playlist/37i9dQZF1DX4sWSpwq3LiO?utm_source=generator&theme=0&autoplay=1";
-    }
-  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,7 +24,7 @@ export default function ShaderShowcase() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const isScrolled = scrollY > 350;
+  const isScrolled = scrollY > 100;
   const isMorphed = scrollY > 350;
 
   return (
@@ -205,35 +196,6 @@ export default function ShaderShowcase() {
           </motion.div>
         </div>
       </main>
-
-      <motion.div
-        className="fixed top-17 right-4 z-50 w-[min(280px,calc(100vw-2rem))] rounded-2xl overflow-hidden"
-        animate={{
-          opacity: spotifyOpen ? 1 : 0,
-          y: spotifyOpen ? 0 : -8,
-          scale: spotifyOpen ? 1 : 0.97,
-        }}
-        initial={false}
-        transition={{ duration: 0.22, ease: "easeOut" }}
-        style={{
-          pointerEvents: spotifyOpen ? "auto" : "none",
-          background: "rgba(0,0,0,0.6)",
-          backdropFilter: "blur(28px) saturate(180%)",
-          WebkitBackdropFilter: "blur(28px) saturate(180%)",
-          border: "1px solid rgba(255,255,255,0.12)",
-        }}
-      >
-        <div className="absolute top-0 left-8 right-8 h-px bg-linear-to-r from-transparent via-[#1ED760]/30 to-transparent" />
-        <iframe
-          ref={iframeRef}
-          width="100%"
-          height="152"
-          frameBorder="0"
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="eager"
-          title="Spotify ambient player"
-        />
-      </motion.div>
 
       <div className="absolute bottom-8 right-4 sm:right-8 z-30">
         <div className="relative w-20 h-20 flex items-center justify-center">

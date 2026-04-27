@@ -1,5 +1,6 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 interface Feature {
@@ -87,10 +88,14 @@ function FeatureCard({
               border: `1px solid ${feature.color}30`,
             }}
           >
-            <img
+            <Image
               src={feature.icon}
               alt={feature.title}
+              width={224}
+              height={224}
               className="w-48 h-48 lg:w-56 lg:h-56 object-contain"
+              placeholder="blur"
+              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5XDcwWSQzRkI-/9k="
             />
           </div>
           
