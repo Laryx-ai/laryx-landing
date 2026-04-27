@@ -168,7 +168,7 @@ export default function MultiOrbitSemiCircle() {
         >
           Integrations
         </h2>
-        <p className="mb-12 max-w-2xl text-white/50 lg:text-lg font-light leading-relaxed px-4">
+        <p className="mb-12 max-w-2xl text-white/60 lg:text-lg font-light leading-relaxed px-4">
           Connect the tools your team already uses. Laryx plugs into your existing workflow — no friction, no migration.
         </p>
 
